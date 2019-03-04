@@ -5,7 +5,7 @@ Formation JavaScript Avancé
 
 ### en ligne via CodeSandbox (recommandé):
 
-- https://codesandbox.io/s/github/SDCOAdvocates/JS-Training
+- https://codesandbox.io/s/github/tjch4919/formationJS/tree/master/
 - Cliquez sur le bouton "Fork" pour avoir votre propre version de travail
 
 ### ou en local
