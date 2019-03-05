@@ -15,7 +15,7 @@ Observable.prototype.subscribe = function(observer) {
   //TODO
   this.observers.push(observer);
   observer.unsubscribe = () => {
-    this.observers.filter(obs => obs !== observer);
+    this.observers = this.observers.filter(obs => obs !== observer);
   };
   return observer;
 };
