@@ -46,9 +46,12 @@ const Button = {
   render() {
     super.render();
     this.elm.textContent = this.text;
+    this.listenToFocusEvents(this.elm);
+    this.listenToClickEvents(this.elm);
     return this.elm;
   }
 };
+Object.setPrototypeOf(Button, Component);
 
 const Input = {
   value: null,
@@ -56,9 +59,12 @@ const Input = {
   render() {
     super.render();
     this.elm.value = this.value;
+    this.listenToFocusEvents(this.elm);
+    this.listenToKeyboardEvents(this.elm) 
     return this.elm;
   }
 };
+Object.setPrototypeOf(Input, Component);
 
 const TextInput = {
   name: "text-input",
@@ -66,3 +72,8 @@ const TextInput = {
     this.value += key;
   }
 };
+
+Object.setPrototypeOf(TextInput, Input);
+
+Object.assign(Button, Focusable, Clickable);
+Object.assign(TextInput, Focusable, KeyboardObserver);

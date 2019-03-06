@@ -2,8 +2,15 @@ import data from "../test/fakedata.json";
 
 // TODO: implémenter une fonction qui compose plusieurs fonctions
 // compose(f,g,h)(x) <=> h(g(f(x)))
-export function compose() {
 
+export function compose(f, ...funcs) {
+  return (...args)=>funcs.reduce((result,fn)=>fn(result), f(...args));
+  
+  return (...args)=>{
+    let result = f(...args);
+    funcs.forEach(func=>result = func(result));
+    return result;
+  };
 }
 
 // les fonctions composées doivent être pures et non mutables
